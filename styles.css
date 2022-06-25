@@ -1,0 +1,166 @@
+#main_header {
+    width: 40%;
+    background-color: black;
+    margin-top: 20pt;
+    margin-left: 30%;
+    padding: 15pt;
+    border-top: 0pt;
+    border-radius: 12pt;
+    border-width: 2pt;
+    border-style: solid;
+    border-color: violet;
+    align-items: center;
+}
+#main_header:hover {
+    background-color: #20162b;
+}
+
+#home_header {
+	margin: 10pt;
+	width: 100%;
+	padding-bottom: 20px;
+	border-bottom: 2px solid violet;
+}
+
+.title_home {
+	color: violet;
+	margin-right: 10pt;
+    font-family: 'Noto Sans', sans-serif;   
+	font-size: 17pt;
+	display: inline;
+}
+
+.main_title {
+    color: violet;
+    font-family: 'Noto Sans', sans-serif;   
+}
+
+.center {
+    text-align: center;
+    vertical-align: center;
+}
+
+body {
+    background-color: black;
+}
+
+.form_section {
+    padding: 15pt;
+   margin-top: 15px; 
+   margin-left: 30%;
+   width: 40%;
+   height: 35vh;
+   border-color: violet;
+   border-style: solid;
+   border-width: 2pt;
+   border-radius: 12pt;
+   justify-content: center;
+   align-items: center;
+   vertical-align: center;
+}
+
+.form_section > div{
+    height: 25vh;
+    margin-top: 5vh;
+    text-align: center;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+}
+
+.form_section > div > div {
+    vertical-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin-left: -170px;
+    text-align: left;
+    color: violet;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+input {
+    width: 35vh;
+    padding: 5px;
+    margin-bottom: 25px;
+    background-color: black;
+    border-radius: 6px;
+    border-color: violet;
+    color: violet;
+}
+
+input:focus {
+    border-color: violet;
+}
+
+.submit_button {
+    margin-top: 15px;
+    border-radius: 6px;
+    border-color: violet;
+    width: 20vh;
+    height: 5vh;
+    background-color: black;
+    color: violet;
+}
+
+button:hover {
+    background-color: #20162b;
+}
+
+.signup-div {
+    margin-top: 40px;
+    vertical-align: center;
+    margin-left: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-div > .submit_button {
+    width: 60vh;
+    margin-left: 10vh;    
+}
+
+.p {
+    color: violet;
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: 10vh;
+}
+
+.home-nav{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+.home_nav_item{
+	display: inline;
+	padding: 15pt;
+	font-size: 16pt;
+	color: violet;
+}
+
+.home_nav_item:hover{
+    background-color: #20162b;
+}
+
+.username_label{
+	display: inline-block;
+	margin-left: 625px;
+}
+
+.cages_div{
+	color: violet;
+    width: 500px;
+    height: 110px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+    text-align:justify;
+}
+
+.sign{
+    height: 550px;
+}
