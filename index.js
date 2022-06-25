@@ -77,6 +77,29 @@ function buildCagesPreview(value){
 
 /**
  * 
+ * Send mail to the user with account code verification
+ * 
+ */
+function sendMailConfirmationToUser(email){
+	var url = 'http://localhost:8000/auth/send_confirmation_mail'
+	var options = {
+		'method': 'POST',
+		'headers': {
+			'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*',
+		},
+		'body': JSON.stringify({
+			destinatary: email
+		})
+	}
+	const request = new Request(url, options)
+	response = fetch(request).then((response) => {
+		location.href = './mail_confirm.html'
+	})
+	return false 
+}
+
+/**
+ * 
  * Function that aims making the login form turns in signup form
  * 
  */
@@ -97,12 +120,39 @@ function signUpFormSetup(form){
 		})
 	}
 
+	sessionStorage.setItem('mail_candidate', form.email.value)
+
 	const request = new Request(url, options)
 	var response = fetch(request).then(
 		(response) => {
-			console.log(response.status)
+			if (response.status == 200){
+				response.json().then(
+					(value) => {
+						sendMailConfirmationToUser(value.user_email)
+					})
+			}
 		}
 	)
-	location.href = './index.html'
+	return false
+}
+
+function verifyCode(form){
+	url = 'http://localhost:8000/auth/verify_code'
+	var options = {
+		'method': 'POST',
+		'headers': {
+			'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*',
+		},
+		'body': JSON.stringify({
+			code: form.code.value,
+			user_email: sessionStorage.getItem('mail_candidate')
+		})
+	}
+
+	const request = new Request(url, options)
+
+	fetch(request).then(
+		(response) => location.href = './index.html'
+	)
 	return false
 }
