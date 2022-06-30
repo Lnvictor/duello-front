@@ -39,7 +39,11 @@ function initialHome(){
 		(response) => {
 			response.json().then((value) => {
 				var foo = document.getElementsByClassName('cages_div')[0]
-				foo.innerHTML = buildCagesPreview(value) 
+				cagesDivHtml = ""
+				value.creator_id.forEach(element => {
+					cagesDivHtml += buildCagesPreview(element)
+				});
+				foo.innerHTML = cagesDivHtml
 			})
 		}
 	)
@@ -51,7 +55,7 @@ function initialHome(){
 
 function retrieveCageByAuthor(){
 	const authorId = sessionStorage.getItem('userId');
-	var url = `http://localhost:8000/cage/cage/${authorId}`
+	var url = `http://localhost:8000/cage/cage/filter/${authorId}?creator=True&participant=True`
 	var options = {
 		'method': 'GET',
 		'headers': {
@@ -71,7 +75,7 @@ function buildCagesPreview(value){
 	var title = value.title
 	var description = value.description
 
-	var htmlTxt = `<p>${title}</p><br>${description}`
+	var htmlTxt = `<div class="unique_div"><p class="cage_title">#${value.id} - ${title}</p><br>Description: ${description}</div>`
 	return htmlTxt
 }
 
