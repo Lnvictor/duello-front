@@ -152,13 +152,36 @@ button:hover {
 }
 
 .cages_div{
+    display: block;
+    font-size: 19px;
+    align-items: center;
+    justify-content: center;
 	color: violet;
-    width: 500px;
-    height: 110px;
+    width: 70vh;
+    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: white;
     text-align:justify;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: purple;
+    margin: auto;
+}
+ 
+.cage_title{
+    font-size: 30px;
+}
+
+.cages_div > .unique_div{
+    border-style: solid;
+    border-radius: 3px;
+    border-color: violet;
+    margin: 10px;
+    padding: 0px 10px 10px 10px;
+}
+
+.unique_div:hover{
+    background-color: #20162b;
 }
 
 .sign{
